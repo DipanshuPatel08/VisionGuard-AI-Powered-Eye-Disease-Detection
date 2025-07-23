@@ -58,6 +58,6 @@ The model is trained to detect and classify multiple eye conditions, including:
   <img src="sscreenshorts/Model_info.png" width="45%" />
 </p>
 <p align="center">
-  <img src="screenshorts/Upload.png" width="45%" style="margin-right: 10px;" />
+  <img src="screenshorts/Model_info.png" width="45%" style="margin-right: 10px;" />
   <img src="screenshorts/Results.png" width="45%" />
 </p>
