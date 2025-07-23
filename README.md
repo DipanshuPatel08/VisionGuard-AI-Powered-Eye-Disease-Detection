@@ -55,7 +55,7 @@ The model is trained to detect and classify multiple eye conditions, including:
 
 <p align="center">
   <img src="screenshorts/Main.png" width="45%" style="margin-right: 10px;" />
-  <img src="sscreenshorts/Model_info.png" width="45%" />
+  <img src="screenshorts/Model_info.png" width="45%" />
 </p>
 <p align="center">
   <img src="screenshorts/Model_info.png" width="45%" style="margin-right: 10px;" />
