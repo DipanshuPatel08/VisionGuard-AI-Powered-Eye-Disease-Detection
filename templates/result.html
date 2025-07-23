@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="{{ url_for('static', filename='images/eye-icon.svg') }}" alt="Eye Icon">
+                <h1>VisionGuard</h1>
+            </div>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('detector') }}" class="active">Detector</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="result-section">
+            <h2>Prediction Result</h2>
+            <div class="result-container">
+                <div class="result-image">
+                    <h3>Uploaded Scan</h3>
+                    <img src="{{ image_url }}" alt="Uploaded Eye Scan">
+                </div>
+                <div class="result-details">
+                    <h3>Analysis</h3>
+                    <p class="result-label">Predicted Condition:</p>
+                    <p class="result-value prediction-{{ predicted_class.lower().replace(' ', '-') }}">{{ predicted_class }}</p>
+                    <p class="result-label">Confidence:</p>
+                    <p class="result-value">{{ confidence }}%</p>
+                    <div class="disclaimer">
+                        <p><strong>Disclaimer:</strong> This is an AI-generated prediction and not a medical diagnosis. Please consult a qualified ophthalmologist for any health concerns.</p>
+                    </div>
+                    <a href="{{ url_for('detector') }}" class="cta-button try-again-btn">Try Another Scan</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 VisionGuard - AI Eye Disease Detection</p>
+        <p>Created by - Dipanshu Patel | Mayank Verma</p>
+    </footer>
+</body>
+</html>

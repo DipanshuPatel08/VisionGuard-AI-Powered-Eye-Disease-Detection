@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eye Disease Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="{{ url_for('static', filename='images/eye-icon.svg') }}" alt="Eye Icon">
+                <h1>VisionGuard</h1>
+            </div>
+            <ul>
+                <li><a href="{{ url_for('home') }}" class="active">Home</a></li>
+                <li><a href="{{ url_for('detector') }}">Detector</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-text">
+                <h2>AI-Powered Eye Disease Detection</h2>
+                <p>Learn how our advanced model detects common eye diseases from <b>fundus scans</b> or <b>retinal scans</b>. Try our detection tool to see it in action.</p>
+                <a href="{{ url_for('detector') }}" class="cta-button">Try The Detector</a>
+            </div>
+            <div class="hero-image">
+                <img src="{{ url_for('static', filename='images/hero-illustration.svg') }}" alt="AI analyzing an eye scan">
+            </div>
+        </section>
+
+        <section class="about" id="about">
+            <h2>About The Diseases We Detect</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <div class="card-icon">👁️</div>
+                    <h3>Normal</h3>
+                    <p>A healthy retina with no signs of common diseases. Clear vision and normal eye pressure are typical indicators.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🌫️</div>
+                    <h3>Cataract</h3>
+                    <p>A clouding of the lens in the eye which leads to a decrease in vision. It is the most common cause of blindness.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">💧</div>
+                    <h3>Glaucoma</h3>
+                    <p>A group of eye conditions that damage the optic nerve, the health of which is vital for good vision. Often caused by high pressure in your eye.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🩸</div>
+                    <h3>Diabetic Retinopathy</h3>
+                    <p>An eye condition that can cause vision loss and blindness in people who have diabetes. It affects blood vessels in the retina.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="how-it-works" id="how-it-works">
+            <h2>How Our Detection Tool Works</h2>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-text">
+                        <h3>Upload an Image</h3>
+                        <p>Upload a clear image of a <b>fundus scans</b> or <b>retinal scans</b>. Our tool supports JPG, JPEG, and PNG formats for analysis.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-text">
+                        <h3>Image Preprocessing</h3>
+                        <p>The system automatically resizes and rescales your image to the 256x256 pixel format required by our model.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-text">
+                        <h3>AI Model Analysis</h3>
+                        <p>Our trained Convolutional Neural Network (CNN) analyzes the image to identify patterns associated with various eye diseases.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-text">
+                        <h3>Get Your Result</h3>
+                        <p>Receive an instant prediction indicating the likely condition, along with a confidence score for the analysis.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Model Performance Section -->
+        <section class="model-performance" id="model-performance">
+            <h2>About Our Model</h2>
+            <div class="performance-container">
+                <div class="performance-text">
+                    <h3>Convolutional Neural Network (CNN)</h3>
+                    <p>We utilize a deep Convolutional Neural Network (CNN), a class of artificial neural networks most commonly applied to analyze visual imagery. Our model is built with multiple convolutional and pooling layers to effectively learn features from the retinal scans.</p>
+                    <h4>Key Parameters:</h4>
+                    <ul>
+                        <li><strong>Image Size:</strong> 256x256 pixels</li>
+                        <li><strong>Optimizer:</strong> Adam</li>
+                        <li><strong>Loss Function:</strong> Sparse Categorical Crossentropy</li>
+                    </ul>
+                    <p>After 6 epochs of training, our model achieved a <strong>validation accuracy of 86.54%</strong>. The visualizations show how the model's accuracy and loss improved over the course of training.</p>
+                </div>
+                <div class="performance-visuals">
+                    <div class="chart">
+                        <h3>Training & Validation Accuracy</h3>
+                        <img src="{{ url_for('static', filename='images/accuracy_plot.svg') }}" alt="Model Accuracy Plot">
+                    </div>
+                    <div class="chart">
+                        <h3>Training & Validation Loss</h3>
+                        <img src="{{ url_for('static', filename='images/loss_plot.svg') }}" alt="Model Loss Plot">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End of New Section -->
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 VisionGuard - AI Eye Disease Detection.</p>
+        <p>Created by - Dipanshu Patel | Mayank Verma</p>
+    </footer>
+</body>
+</html>

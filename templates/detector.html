@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eye Disease Detector Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="{{ url_for('static', filename='images/eye-icon.svg') }}" alt="Eye Icon">
+                <h1>VisionGuard</h1>
+            </div>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('detector') }}" class="active">Detector</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="detector-tool">
+            <h2>Eye Disease Detection Tool</h2>
+            <p class="subtitle">Upload an image of a <b>fundus scans</b> or <b>retinal scans</b> to get a prediction</p>
+            
+            <form id="upload-form" action="{{ url_for('detector') }}" method="post" enctype="multipart/form-data">
+                <div class="upload-area" id="upload-area">
+                    <div class="upload-icon">
+                        <img src="{{ url_for('static', filename='images/upload-icon.svg') }}" alt="Upload Icon">
+                    </div>
+                    <p><strong>Drag & Drop or Click to Upload</strong></p>
+                    <p class="support-text">Supports JPG, JPEG, PNG</p>
+                    <input type="file" name="file" id="file-input" accept="image/png, image/jpeg, image/jpg" hidden>
+                    <button type="button" id="select-image-btn">Select Image</button>
+                </div>
+                <div id="image-preview-container" class="image-preview-container" style="display: none;">
+                    <img id="image-preview" src="#" alt="Image Preview">
+                    <p id="filename-display"></p>
+                </div>
+                <button type="submit" id="process-image-btn" class="cta-button process-btn" disabled>Process Image</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 VisionGuard - AI Eye Disease Detection</p>
+        <p>Created by - Dipanshu Patel | Mayank Verma</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
