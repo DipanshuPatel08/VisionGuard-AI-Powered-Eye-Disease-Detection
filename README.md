@@ -34,15 +34,7 @@ VisionGuard leverages cutting-edge deep learning techniques to assist in the ear
 - **Deep Learning Libraries:** TensorFlow / Keras or PyTorch for model implementation.
 - **HTML/CSS/JavaScript:** Simple, minimal interface for user interaction.
 
-### Getting Started
 
-Clone the repository, set up your environment, and start the Flask server to begin using VisionGuard for AI-powered eye disease detection.
-
-```
-git clone https://github.com/DipanshuPatel08/VisionGuard-AI-Powered-Eye-Disease-Detection.git
-cd VisionGuard-AI-Powered-Eye-Disease-Detection
-# Install dependencies and start Flask server
-```
 
 ---
 
