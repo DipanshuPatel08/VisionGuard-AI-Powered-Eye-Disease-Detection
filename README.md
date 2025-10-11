@@ -40,7 +40,7 @@ VisionGuard leverages cutting-edge deep learning techniques to assist in the ear
 ![HOME PAGE](uploads/home.png)
 ![Model Parameters](uploads/perfomance.png)
 ![Upload](uploads/upload.png)
-![Result](result/upload.png)
+![Result](uploads/result.png)
 ---
 
 *VisionGuard prioritizes backend intelligence and AI accuracy, making it a powerful tool for medical image analysis with a streamlined user experience.*
